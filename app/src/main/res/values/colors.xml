@@ -2,4 +2,18 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="atencion">#FFAA00</color>
+    <color name="informacion">#008BF8</color>
+    <color name="error">#FF0101</color>
+    <color name="ok">#2D7530</color>
+
+    <color name="oscuro">#888888</color>
+    <color name="gris">#CCCCCC</color>
+    <color name="app">#df6f56</color>
+
+    <color name="gradiente_color1">#FB8C00</color>
+    <color name="gradiente_color2">#df6f56</color>
+
 </resources>
