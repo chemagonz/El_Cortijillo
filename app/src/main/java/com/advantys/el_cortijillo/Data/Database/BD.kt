@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.os.Environment
 import javax.inject.Inject
 
-val DATABASE_NAME="Cortijillo.db"
+val DATABASE_NAME="CortijilloDef.db"
 class BD @Inject constructor(contexto: Context): SQLiteOpenHelper(contexto, DATABASE_NAME, null, 1){
 
     private val DATABASE_RUTA = Environment.getExternalStorageDirectory().path+ "/ElCortijillo/"

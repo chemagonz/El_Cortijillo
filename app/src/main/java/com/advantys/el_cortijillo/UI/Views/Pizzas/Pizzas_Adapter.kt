@@ -13,7 +13,7 @@ import com.advantys.el_cortijillo.databinding.ItemHamburguesasBinding
 import com.advantys.el_cortijillo.databinding.ItemPizzasBinding
 import com.bumptech.glide.Glide
 
-class Pizzas_Adapter (private val pizzasList: List<Pizza?>, private val pizzaViewmodel: Pizzas_ViewModel): RecyclerView.Adapter<Pizzas_ViewHolder>() {
+class Pizzas_Adapter (private var pizzasList: List<Pizza?>, private val pizzaViewmodel: Pizzas_ViewModel): RecyclerView.Adapter<Pizzas_ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Pizzas_ViewHolder {
 
         val layoutInflater = LayoutInflater.from(parent.context)

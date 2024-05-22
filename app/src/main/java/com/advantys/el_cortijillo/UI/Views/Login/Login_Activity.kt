@@ -36,8 +36,24 @@ class Login_Activity : AppCompatActivity() {
             finish()
         }
 
-        binding.inicioSesion.setOnClickListener {
+        usuarioViewmodel.userId.observe(this, Observer { userId ->
+            userId?.let {
 
+                val intent = Intent(this, PantallaPrincipal_Activity::class.java).apply {
+                    putExtra("USER_ID", it)
+                }
+                startActivity(intent)
+                finish()
+            } ?: run {
+                mostrarSnackbar("Credenciales incorrectas", TipoAlerta.error)
+            }
+        })
+
+        binding.inicioSesion.setOnClickListener {
+            val usuario = binding.edUsuario.text.toString()
+            val password = binding.edPassword.text.toString()
+
+           usuarioViewmodel.verificarUsuario(usuario,password)
         }
 
     }

@@ -11,6 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.advantys.el_cortijillo.R
 import com.advantys.el_cortijillo.UI.ViewModels.Bocadillos_ViewModel
+import com.advantys.el_cortijillo.UI.ViewModels.Productos_ViewModel
+import com.advantys.el_cortijillo.UI.Views.PantallaPrincipal.ui.home.busquedaProductos_Adapter
 import com.advantys.el_cortijillo.Utils.actionBar
 import com.advantys.el_cortijillo.databinding.ActivityBienvenidaBinding
 import com.advantys.el_cortijillo.databinding.ActivityBocadillosBinding
@@ -20,13 +22,15 @@ import dagger.hilt.android.AndroidEntryPoint
 class Bocadillos_Activity : AppCompatActivity() {
 
     val bocadillosViewmodel: Bocadillos_ViewModel by viewModels()
+    val productosViewmodel: Productos_ViewModel by viewModels()
+
     private lateinit var binding : ActivityBocadillosBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityBocadillosBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        actionBar("BOCADILLOS")
+        actionBar("BOCADILLOS", backgroundResId = R.drawable.background_intro)
         mostrarBocadillos()
     }
 
@@ -41,11 +45,12 @@ class Bocadillos_Activity : AppCompatActivity() {
     }
 
     private fun mostrarBocadillos(){
-        bocadillosViewmodel.obtenerBocadillos()
-        bocadillosViewmodel.bocadillosModel.observe(this, Observer {
+        val userID = intent.getIntExtra("USER_ID", -1)
+        val bocadilloCategoria = intent.getStringExtra("categoria")
+        productosViewmodel.obtenerProductosCategoria(bocadilloCategoria)
+        productosViewmodel.productoModel.observe(this, Observer {
             binding.recyclerviewBocadillos.layoutManager= LinearLayoutManager(this)
-            binding.recyclerviewBocadillos.adapter = Bocadillos_Adapter(it, bocadillosViewmodel)
+            binding.recyclerviewBocadillos.adapter = busquedaProductos_Adapter(it, productosViewmodel, userID)
         })
     }
-
 }

@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class Hamburguesas_Dao @Inject constructor(private val databaseManager: BDUtils) {
 
-    fun obtenerHamburguesas(): List<Hamburguesas_Entity?> {
+    fun obtenerHamburguesas(filtro: String? = null): List<Hamburguesas_Entity?> {
         val sql = "SELECT * FROM ${Hamburguesas_Schema.TABLE_NAME} "
         return databaseManager.query(sql) { cursor ->
             Hamburguesas_Entity.fromCursor(cursor)

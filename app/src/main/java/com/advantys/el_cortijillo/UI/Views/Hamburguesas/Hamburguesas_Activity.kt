@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.advantys.el_cortijillo.R
 import com.advantys.el_cortijillo.UI.ViewModels.Bebidas_ViewModel
 import com.advantys.el_cortijillo.UI.ViewModels.Hamburguesas_ViewModel
+import com.advantys.el_cortijillo.UI.ViewModels.Productos_ViewModel
 import com.advantys.el_cortijillo.UI.Views.Bocadillos.Bocadillos_Adapter
+import com.advantys.el_cortijillo.UI.Views.PantallaPrincipal.ui.home.busquedaProductos_Adapter
 import com.advantys.el_cortijillo.Utils.actionBar
 import com.advantys.el_cortijillo.databinding.ActivityHamburguesasBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,13 +23,15 @@ import dagger.hilt.android.AndroidEntryPoint
 class Hamburguesas_Activity : AppCompatActivity() {
 
     val hamburguesasViewmodel: Hamburguesas_ViewModel by viewModels()
+    val productosViewmodel: Productos_ViewModel by viewModels()
+
     private lateinit var binding : ActivityHamburguesasBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityHamburguesasBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        actionBar("HAMBURGUESAS")
+        actionBar("HAMBURGUESAS",backgroundResId = R.drawable.background_intro)
         mostrarHamburguesas()
 
     }
@@ -42,10 +46,14 @@ class Hamburguesas_Activity : AppCompatActivity() {
     }
 
     private fun mostrarHamburguesas(){
-        hamburguesasViewmodel.obtenerHamburguesas()
-        hamburguesasViewmodel.hamburguesasModel.observe(this, Observer {
+        val userID = intent.getIntExtra("USER_ID", -1)
+        val hamburguesaCategoria = intent.getStringExtra("categoria")
+        productosViewmodel.obtenerProductosCategoria(hamburguesaCategoria)
+        productosViewmodel.productoModel.observe(this, Observer {
             binding.recyclerviewHamburguesas.layoutManager= LinearLayoutManager(this)
-            binding.recyclerviewHamburguesas.adapter = Hamburguesas_Adapter(it, hamburguesasViewmodel)
+            binding.recyclerviewHamburguesas.adapter = busquedaProductos_Adapter(it, productosViewmodel, userID)
         })
     }
+
+
 }

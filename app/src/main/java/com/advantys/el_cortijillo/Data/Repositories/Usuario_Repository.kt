@@ -13,8 +13,18 @@ class Usuario_Repository @Inject constructor(private val usuariosDao: RegistoUsu
         usuariosDao.registroUsuario(usuario.toEntity())
     }
 
-    fun obtenerUsuario (usuario: String, password: String): Usuario? {
-        val response : Usuarios_Entity? = usuariosDao.obtenerUsuario(usuario, password)
+    fun obtenerUsuario (userID: Int): String? {
+        val response : String? = usuariosDao.obtenerUsuario(userID)
+        return response
+    }
+
+    fun obtenerUsuarioDetalles(usuario: Int?): Usuario? {
+        val response: Usuarios_Entity? = usuariosDao.obtenerUsuarioDetalles(usuario)
         return response?.toDomain()
     }
+
+   fun verificarUsuario(usuario: String, password: String): Int? {
+       val response: Int? = usuariosDao.verificarCredenciales(usuario,password)
+       return response
+   }
 }

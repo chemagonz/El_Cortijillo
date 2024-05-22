@@ -124,12 +124,16 @@ fun AppCompatActivity.actionBar(
     subtitulo: String? = null,
     displayHomeAsUpEnabled: Boolean = true,
     homeButtonEnabled: Boolean = true,
+    backgroundResId: Int? = null // Agregamos el parámetro backgroundResId
 ) {
     supportActionBar?.apply {
         setDisplayHomeAsUpEnabled(displayHomeAsUpEnabled)
         setHomeButtonEnabled(homeButtonEnabled)
         this.title = titulo
         this.subtitle = subtitulo
+        backgroundResId?.let {
+            setBackgroundDrawable(ContextCompat.getDrawable(this@actionBar, it))
+        }
     }
 }
 

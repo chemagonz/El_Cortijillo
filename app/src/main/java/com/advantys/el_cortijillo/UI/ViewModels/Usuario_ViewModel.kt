@@ -22,6 +22,12 @@ class Usuario_ViewModel @Inject constructor(private val usuarioUsecase: Usuario_
 
     val usuarioModel = MutableLiveData<Usuario?>()
 
+    private val _userId = MutableLiveData<Int?>()
+    val userId: LiveData<Int?> get() = _userId
+
+    private val _nombreUsuario = MutableLiveData<String?>()
+    val nombreUsuario: LiveData<String?> get() = _nombreUsuario
+
 
     fun registroUsuario(usuario: Usuario) {
         viewModelScope.launch {
@@ -34,17 +40,24 @@ class Usuario_ViewModel @Inject constructor(private val usuarioUsecase: Usuario_
         }
     }
 
-    @SuppressLint("SuspiciousIndentation")
-    fun iniciarSesion(correo: String, password: String) {
+    fun obtenerUsuarioDetalles(usuario: Int?) {
+        viewModelScope.launch(Dispatchers.Default) {
+            val resultado = usuarioUsecase.obtenerUsuarioDetalles(usuario)
+            if (resultado != null) {
+                usuarioModel.postValue(resultado)
+            }
+        }
+    }
+
+    fun verificarUsuario(usuario: String, contraseña: String){
         viewModelScope.launch {
-            val usuario = withContext(Dispatchers.IO) {
-                usuarioUsecase.obtenerUsuario(correo, password)
-            }
-            if (usuario != null) {
-                withContext(Dispatchers.Main) {
-                    usuarioModel.value = usuario
-                }
-            }
+            _userId.value = usuarioUsecase.verificarUsuario(usuario, contraseña)
+        }
+    }
+
+    fun obtenerUsuario(userId: Int) {
+        viewModelScope.launch {
+            _nombreUsuario.value = usuarioUsecase.obtenerUsuario(userId)
         }
     }
 }

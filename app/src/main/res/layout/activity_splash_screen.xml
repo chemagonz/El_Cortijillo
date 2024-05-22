@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
     android:background="@drawable/background_intro"
     tools:context=".UI.Views.SplashScreen.SplashScreen_Activity">
 

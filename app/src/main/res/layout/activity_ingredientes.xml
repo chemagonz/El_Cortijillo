@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.Views.BocadillosPersonalizados.BocadillosPersonalizados_Activity"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical" >
+            <LinearLayout
+                android:id="@+id/linearLayout9"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:background="#FFFFFF"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/card"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="203dp"
+                        android:layout_height="163dp"
+                        android:src="@mipmap/bocadillos_personalizados_foreground">
+
+                    </ImageView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:text="PERSONALIZA TU BOCADILLO A TU GUSTO!" />
+
+                <LinearLayout
+                    android:id="@+id/separador4"
+                    android:layout_width="280dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorAppLayout"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/layoutImagen"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:id="@+id/txtFamilia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Ingrediente 1"
+                        android:paddingTop="5dp"
+                        android:layout_margin="16dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autocomplete1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:layout_weight="1"
+                            android:focusable="false"
+                            android:cursorVisible="false"
+                            >
+                        </AutoCompleteTextView>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LinearLayout05"
+                    android:layout_marginTop="10sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtSubfamilia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:hint="Ingrediente 2"
+                        android:paddingTop="5dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autocomplete2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:layout_weight="1"
+                            android:focusable="false"
+                            android:cursorVisible="false">
+                        </AutoCompleteTextView>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/LinearLayout04"
+                    android:layout_marginTop="10sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtFormato"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:hint="Ingrediente 3"
+                        android:paddingTop="5dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autocomplete3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:cursorVisible="false"
+                            android:layout_weight="1"
+                            android:focusable="false"
+                            android:inputType="none">
+
+                        </AutoCompleteTextView>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/LinearLayout03"
+                    android:layout_marginTop="10sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtMarca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:hint="Ingrediente 4"
+                        android:paddingTop="5dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autocomplete4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:inputType="none"
+                            android:focusable="false"
+                            android:cursorVisible="false">
+                        </AutoCompleteTextView>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/LinearLayout01"
+                    android:layout_marginTop="10sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtSabor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:hint="Ingrediente 5"
+                        android:paddingTop="5dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autocomplete5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:inputType="none"
+                            android:focusable="false"
+                            android:cursorVisible="false">
+                        </AutoCompleteTextView>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    android:textSize="18dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
+                    android:text="Nombre del bocadillo" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/customOutlineText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp">
+
+                    <EditText
+                        android:id="@+id/edNombreBocadillo"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5sp"
+                        android:cursorVisible="false"
+                        android:focusable="true"
+                        android:layout_marginBottom="10dp"
+                        android:focusableInTouchMode="true"
+                        android:inputType="text"
+                        android:textAlignment="center"
+                        android:textSize="18dp"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:background="@drawable/background_btn_intro"
+                    android:backgroundTint="@color/colorAppLayout"
+                    android:layout_marginBottom="20dp"
+                    android:text="AÑADIR BOCADILLO" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

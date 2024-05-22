@@ -15,5 +15,8 @@
 
     <color name="gradiente_color1">#FB8C00</color>
     <color name="gradiente_color2">#df6f56</color>
+    <color name="colorAppLayout">#ff5e00</color>
+    <color name="colorAppLayoutSecondary">#ffc5ab</color>
+
 
 </resources>

@@ -38,8 +38,11 @@ class SplashScreen_Activity : AppCompatActivity() {
                 PermisosUtils.solicitarPermisosAlmacenamiento(this)
             } else {
                 continuarDespuesPermisos()
+                EntrarAlPrograma()
             }
         }, 500)
+
+
 
 
     }

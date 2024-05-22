@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.advantys.el_cortijillo.Domain.Models.Bebida
 import com.advantys.el_cortijillo.Domain.Models.Bocadillo
+import com.advantys.el_cortijillo.Domain.Models.Pizza
 import com.advantys.el_cortijillo.R
 import com.advantys.el_cortijillo.UI.ViewModels.Bebidas_ViewModel
 import com.advantys.el_cortijillo.UI.ViewModels.Bocadillos_ViewModel
@@ -13,7 +14,7 @@ import com.advantys.el_cortijillo.databinding.ItemBebidasBinding
 import com.advantys.el_cortijillo.databinding.ItemBocadillosBinding
 import com.bumptech.glide.Glide
 
-class Bebidas_Adapter (private val bebidasList: List<Bebida?>, private val bebidaViewmodel: Bebidas_ViewModel): RecyclerView.Adapter<Bebidas_ViewHolder>() {
+class Bebidas_Adapter (private var bebidasList: List<Bebida?>, private val bebidaViewmodel: Bebidas_ViewModel): RecyclerView.Adapter<Bebidas_ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Bebidas_ViewHolder {
 
         val layoutInflater = LayoutInflater.from(parent.context)

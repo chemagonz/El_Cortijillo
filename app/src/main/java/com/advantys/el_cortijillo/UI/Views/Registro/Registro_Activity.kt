@@ -42,6 +42,11 @@ class Registro_Activity : AppCompatActivity() {
                 correo = binding.email.text.toString(),
                 password = binding.Password.text.toString()
             )
+
+            if (binding.Password != binding.RPassword) {
+                mostrarSnackbar("Las contraseñas no coinciden", TipoAlerta.error)
+            }
+
             usuarioViewmodel.registroUsuario(nuevoUsuario)
             usuarioViewmodel.mensajeRegistro.observe(this,  Observer { mensaje ->
                 when (mensaje.tipo) {

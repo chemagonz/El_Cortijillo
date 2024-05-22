@@ -17,8 +17,17 @@ import javax.inject.Inject
 class BDUtils @Inject constructor (private val dbHelper: BD){
     fun insert(tabla: String, parametros : ContentValues) {
         val db = dbHelper.openDatabaseWrite()
-        db.insert(tabla, null, parametros)
+        val id= db.insert(tabla, null, parametros)
         db.close()
+
+
+    }
+
+    fun insertInt(tabla: String, parametros : ContentValues): Long {
+        val db = dbHelper.openDatabaseWrite()
+        val id = db.insert(tabla, null, parametros)
+        db.close()
+        return id
     }
     //    fun insertIfNotExists(tabla: String, parametros : ContentValues, where: String) {
 //        if(!existe(tabla, where))
@@ -78,6 +87,7 @@ class BDUtils @Inject constructor (private val dbHelper: BD){
         return resultado
     }
 
+
     fun existeInt(tabla: String, where: String): Int {
         val db = dbHelper.openDatabaseRead()
         val selectQuery = " SELECT COUNT(*)  FROM $tabla WHERE $where "
@@ -98,6 +108,18 @@ class BDUtils @Inject constructor (private val dbHelper: BD){
         return count
     }
 
+    fun verificarCredenciales(tabla: String, campoId: String, campoUsuario: String, campoContraseña: String, usuario: String, contraseña: String): Int? {
+        val db = dbHelper.openDatabaseRead()
+        val cursor = db.query(tabla, arrayOf(campoId), "$campoUsuario = ? AND $campoContraseña = ?", arrayOf(usuario, contraseña), null, null, null
+        )
+        var userId: Int? = null
+        if (cursor.moveToFirst()) {
+            userId = cursor.getInt(cursor.getColumnIndexOrThrow(campoId))
+        }
+        cursor.close()
+        db.close()
+        return userId
+    }
     //Funcion generica para mostrar una lista    04/03/2024
     fun <T> query(sql: String, fromCursor: (cursor: Cursor) -> T): List<T>{
         val db = dbHelper.openDatabaseRead()
@@ -201,8 +223,8 @@ class BDUtils @Inject constructor (private val dbHelper: BD){
         return getSelectScalar(sql) as Boolean
     }
 
-    fun getSelectScalarString(sql: String) :String {
-        return getSelectScalar(sql) as String
+    fun getSelectScalarString(sql: String) :String? {
+        return getSelectScalar(sql) as String?
     }
 
     fun getSelectScalarFloat(sql: String) :Float {

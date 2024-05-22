@@ -1,8 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.El_Cortijillo" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Base.Theme.El_Cortijillo" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/gradiente_color1</item>
+        <item name="colorPrimary">@color/colorAppLayout</item>
+        <item name="android:navigationBarColor">#00000000</item>
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="colorSecondary">@color/colorAppLayoutSecondary</item>
     </style>
 
     <style name="Theme.El_Cortijillo" parent="Base.Theme.El_Cortijillo" />
@@ -10,9 +13,18 @@
     <style name="Theme.El_Cortijillo.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="colorSecondaryVariant">@color/colorAppLayoutSecondary</item>
+
     </style>
 
     <style name="Theme.El_Cortijillo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.El_Cortijillo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name= "customOutlineText" parent= "Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <!-- Color cuando no está presionado -->
+        <item name="boxBackgroundColor">#f0f0f0</item>
+        <item name="boxStrokeColor">@color/colorAppLayout</item>
+    </style>
 </resources>

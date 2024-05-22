@@ -5,12 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.advantys.el_cortijillo.Domain.Models.Bocadillo
+import com.advantys.el_cortijillo.Domain.Models.Pizza
 import com.advantys.el_cortijillo.R
 import com.advantys.el_cortijillo.UI.ViewModels.Bocadillos_ViewModel
 import com.advantys.el_cortijillo.databinding.ItemBocadillosBinding
 import com.bumptech.glide.Glide
 
-class Bocadillos_Adapter  (private val bocadillosList: List<Bocadillo?>, private val bocadilloViewmodel: Bocadillos_ViewModel): RecyclerView.Adapter<Bocadillos_ViewHolder>() {
+class Bocadillos_Adapter  (private var bocadillosList: List<Bocadillo?>, private val bocadilloViewmodel: Bocadillos_ViewModel): RecyclerView.Adapter<Bocadillos_ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Bocadillos_ViewHolder {
 
         val layoutInflater = LayoutInflater.from(parent.context)
