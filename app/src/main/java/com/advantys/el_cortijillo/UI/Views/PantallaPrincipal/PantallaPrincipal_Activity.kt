@@ -53,7 +53,10 @@ class PantallaPrincipal_Activity : AppCompatActivity() {
         setSupportActionBar(binding.appBarPantallaPrincipal.toolbar)
 
         binding.appBarPantallaPrincipal.fab.setOnClickListener {
+
+            val userId = intent.getIntExtra("USER_ID", -1)
             val intent = Intent(this, Cesta_Activity::class.java)
+            intent.putExtra("USER_ID", userId)
             startActivity(intent)
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
@@ -63,7 +66,7 @@ class PantallaPrincipal_Activity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_HistorialPedidos
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

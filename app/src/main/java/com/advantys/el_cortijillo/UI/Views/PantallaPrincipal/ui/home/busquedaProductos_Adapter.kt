@@ -33,6 +33,7 @@ class busquedaProductos_Adapter (private var productosList: List<Producto?>, pri
 
         holder.binding.botonAddCarrito.setOnClickListener {
             productoViewmodel.insertCestaItems(userId, item?.productoID, null, 1, item?.nombre, item?.descripcion, item?.precio, item?.imagen)
+
         }
 
     }

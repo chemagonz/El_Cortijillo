@@ -35,4 +35,15 @@ class Cesta_Dao @Inject constructor(private val databaseManager: BDUtils) {
             Cesta_Entity.fromCursor(cursor)
         }
     }
+
+    fun deleteCestaItem(cestaItemID: Int?): Boolean {
+        val whereClause = "${Cesta_Schema.CESTA_ID} = ?"
+        val whereArgs = arrayOf(cestaItemID.toString())
+       return databaseManager.delete(Cesta_Schema.TABLE_NAME, whereClause, whereArgs)
+    }
+
+    fun deleteCesta(): Boolean {
+       return databaseManager.delete(Cesta_Schema.TABLE_NAME)
+    }
+
 }

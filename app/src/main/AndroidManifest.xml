@@ -32,6 +32,7 @@
             android:exported="false"
             android:theme="@style/Theme.El_Cortijillo" />
         <activity
+            android:theme="@style/Theme.El_Cortijillo"
             android:name=".UI.Views.Productos.ProductoDetalles_Activity"
             android:exported="false" />
         <activity

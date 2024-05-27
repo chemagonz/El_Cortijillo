@@ -54,10 +54,10 @@ class BDUtils @Inject constructor (private val dbHelper: BD){
             return false
         }
     }
-    fun delete(tabla: String, where: String) :Boolean{
+    fun delete(tabla: String, where: String, whereArgs: Array<String>) :Boolean{
         try {
             val db = dbHelper.openDatabaseWrite()
-            db.delete(tabla, where, null)
+            db.delete(tabla, where, whereArgs)
             db.close()
             return true
         }catch (e:Exception){
