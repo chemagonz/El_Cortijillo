@@ -2,19 +2,15 @@ package com.advantys.el_cortijillo.UI.Views.Bocadillos
 
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.advantys.el_cortijillo.R
 import com.advantys.el_cortijillo.UI.ViewModels.Bocadillos_ViewModel
 import com.advantys.el_cortijillo.UI.ViewModels.Productos_ViewModel
-import com.advantys.el_cortijillo.UI.Views.PantallaPrincipal.ui.home.busquedaProductos_Adapter
+import com.advantys.el_cortijillo.UI.Views.PantallaPrincipal.busquedaProductos_Adapter
 import com.advantys.el_cortijillo.Utils.actionBar
-import com.advantys.el_cortijillo.databinding.ActivityBienvenidaBinding
 import com.advantys.el_cortijillo.databinding.ActivityBocadillosBinding
 import dagger.hilt.android.AndroidEntryPoint
 

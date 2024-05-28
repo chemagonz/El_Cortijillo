@@ -12,7 +12,7 @@ class Pedidos_Dao @Inject constructor(private val databaseManager: BDUtils) {
     }
 
     fun obtenerPedidos(usuario: Int?): List<Pedidos_Entity> {
-        val sql = "SELECT * FROM {${Pedidos_Schema.TABLE_NAME} WHERE ${Pedidos_Schema.ID_USUARIO_FIELD} = $usuario"
+        val sql = "SELECT * FROM ${Pedidos_Schema.TABLE_NAME} WHERE ${Pedidos_Schema.ID_USUARIO_FIELD} = $usuario"
         return  databaseManager.query(sql) { cursor ->
             Pedidos_Entity.fromCursor(cursor)
         }

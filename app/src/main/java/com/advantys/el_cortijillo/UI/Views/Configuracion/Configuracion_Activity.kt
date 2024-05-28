@@ -2,6 +2,7 @@ package com.advantys.el_cortijillo.UI.Views.Configuracion
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -85,8 +86,9 @@ class Configuracion_Activity : AppCompatActivity() {
     private fun infoUsuario(usuario: Usuario?) {
 
         binding.edUsuario.setText(usuario?.nombre)
-        binding.edPassword.setText(usuario?.telefono)
+        binding.edTelefono.setText(usuario?.telefono)
         binding.edcorreo.setText(usuario?.correo)
 
     }
+
 }

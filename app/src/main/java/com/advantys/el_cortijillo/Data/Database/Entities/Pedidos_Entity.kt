@@ -19,7 +19,8 @@ class Pedidos_Entity(
     var id: Int? = null,
     var usuarioID: Int? = null,
     var total: String? = null,
-    var fecha: String? = null
+    var fecha: String? = null,
+    var horaRecogida: String? = null
 
 )
 {
@@ -30,6 +31,7 @@ class Pedidos_Entity(
             modelo.usuarioID = cursor.getInt(Pedidos_Schema.ID_USUARIO_FIELD, null)
             modelo.total = cursor.getString(Pedidos_Schema.TOTAL_FIELD, null)
             modelo.fecha = cursor.getString(Pedidos_Schema.FECHAHORA_FIELD, null)
+            modelo.horaRecogida = cursor.getString(Pedidos_Schema.HORARECOGIDA_FIELD, null)
             return modelo
         }
     }
@@ -40,8 +42,9 @@ class Pedidos_Entity(
         values.put(Pedidos_Schema.ID_USUARIO_FIELD, usuarioID)
         values.put(Pedidos_Schema.FECHAHORA_FIELD, fecha)
         values.put(Pedidos_Schema.TOTAL_FIELD, total)
+        values.put(Pedidos_Schema.HORARECOGIDA_FIELD, horaRecogida)
         return values
     }
 
 }
-fun Pedido.toEntity() = Pedidos_Entity(id, usuarioID, total, fecha)
+fun Pedido.toEntity() = Pedidos_Entity(id, usuarioID, total, fecha, horaRecogida)

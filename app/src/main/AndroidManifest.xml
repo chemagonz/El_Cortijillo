@@ -17,12 +17,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.El_Cortijillo.NoActionBar">
         <activity
+            android:name=".UI.Views.Informacion.Informacion_Activity"
             android:theme="@style/Theme.El_Cortijillo"
-            android:name=".UI.Views.Cesta.Cesta_Activity"
             android:exported="false" />
         <activity
+            android:name=".UI.Views.Pedidos.Pedidos_Activity"
+            android:exported="false"
+            android:theme="@style/Theme.El_Cortijillo"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".UI.Views.Cesta.Cesta_Activity"
+            android:exported="false"
+            android:theme="@style/Theme.El_Cortijillo" />
+        <activity
             android:name=".UI.Views.Valoraciones.Valoraciones_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.El_Cortijillo"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".UI.Views.BocadillosPersonalizados.BocadillosPersonalizados_Activity"
             android:exported="false"
@@ -32,9 +43,9 @@
             android:exported="false"
             android:theme="@style/Theme.El_Cortijillo" />
         <activity
-            android:theme="@style/Theme.El_Cortijillo"
             android:name=".UI.Views.Productos.ProductoDetalles_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.El_Cortijillo" />
         <activity
             android:name=".UI.Views.Pizzas.Pizzas_Activity"
             android:exported="false"
@@ -64,13 +75,15 @@
             android:name=".UI.Views.PantallaPrincipal.PantallaPrincipal_Activity"
             android:exported="true"
             android:label="@string/title_activity_pantalla_principal"
-            android:theme="@style/Theme.El_Cortijillo.NoActionBar" />
+            android:theme="@style/Theme.El_Cortijillo" />
         <activity
             android:name=".UI.Views.Registro.Registro_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".UI.Views.Login.Login_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".UI.Views.Bienvenida.Bienvenida_Activity"
             android:exported="false" />

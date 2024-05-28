@@ -8,5 +8,7 @@ class Pedidos_Schema {
         const val ID_USUARIO_FIELD = "UsuarioID"
         const val TOTAL_FIELD = "Total"
         const val FECHAHORA_FIELD = "Fecha"
+        const val HORARECOGIDA_FIELD = "HoraRecogida"
+
     }
 }

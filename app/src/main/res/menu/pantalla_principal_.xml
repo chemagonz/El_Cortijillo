@@ -6,4 +6,10 @@
         android:orderInCategory="100"
         android:title="Configuración"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/salir"
+        android:orderInCategory="100"
+        android:title="Cerrar sesión"
+        app:showAsAction="never" />
 </menu>

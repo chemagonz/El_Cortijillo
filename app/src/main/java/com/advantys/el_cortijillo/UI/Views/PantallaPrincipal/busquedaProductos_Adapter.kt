@@ -1,4 +1,4 @@
-package com.advantys.el_cortijillo.UI.Views.PantallaPrincipal.ui.home
+package com.advantys.el_cortijillo.UI.Views.PantallaPrincipal
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.advantys.el_cortijillo.Domain.Models.Producto
 import com.advantys.el_cortijillo.R
 import com.advantys.el_cortijillo.UI.ViewModels.Productos_ViewModel
-import com.advantys.el_cortijillo.Utils.mostrarSnackbar
-import com.advantys.el_cortijillo.databinding.ItemPizzasBinding
 import com.advantys.el_cortijillo.databinding.ItemProductosBinding
 import com.bumptech.glide.Glide
 
