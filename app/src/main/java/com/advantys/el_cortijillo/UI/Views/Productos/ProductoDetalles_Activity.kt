@@ -6,6 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.advantys.el_cortijillo.Domain.Models.Producto
+import com.advantys.el_cortijillo.R
 import com.advantys.el_cortijillo.UI.ViewModels.Productos_ViewModel
 import com.advantys.el_cortijillo.Utils.Respuesta
 import com.advantys.el_cortijillo.Utils.TipoAlerta
@@ -25,7 +26,7 @@ class ProductoDetalles_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        actionBar("DETALLES")
+        actionBar("DETALLES", backgroundResId = R.drawable.background_intro)
         mostrarDetalles()
         insertarProductosCesta()
 

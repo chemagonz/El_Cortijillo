@@ -43,9 +43,16 @@ class Registro_Activity : AppCompatActivity() {
                 password = binding.Password.text.toString()
             )
 
+            if (binding.nuevoUsuario.equals("") && binding.edTelefono.equals("") && binding.email.equals("") && binding.Password.equals("")) {
+                mostrarSnackbar("Los campos están vacíos", TipoAlerta.error)
+            }
+
+
             if (binding.Password != binding.RPassword) {
                 mostrarSnackbar("Las contraseñas no coinciden", TipoAlerta.error)
             }
+
+
 
             usuarioViewmodel.registroUsuario(nuevoUsuario)
             usuarioViewmodel.mensajeRegistro.observe(this,  Observer { mensaje ->
